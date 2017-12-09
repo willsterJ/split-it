@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A93F261B1FDC562C00A142ED /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F261A1FDC562C00A142ED /* Friend.swift */; };
 		A95BDA9A1FB3BA5500D1555A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BDA991FB3BA5500D1555A /* AppDelegate.swift */; };
 		A95BDA9C1FB3BA5500D1555A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BDA9B1FB3BA5500D1555A /* ViewController.swift */; };
 		A95BDA9F1FB3BA5500D1555A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95BDA9D1FB3BA5500D1555A /* Main.storyboard */; };
@@ -14,6 +15,12 @@
 		A95BDAA41FB3BA5500D1555A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95BDAA21FB3BA5500D1555A /* LaunchScreen.storyboard */; };
 		A95BDAAF1FB3BA5500D1555A /* Just_Split_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BDAAE1FB3BA5500D1555A /* Just_Split_ItTests.swift */; };
 		A95BDABA1FB3BA5600D1555A /* Just_Split_ItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BDAB91FB3BA5600D1555A /* Just_Split_ItUITests.swift */; };
+		A993CA721FC37AD2009E3E2F /* GroupBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993CA711FC37AD2009E3E2F /* GroupBill.swift */; };
+		A993CA741FC37BC3009E3E2F /* IndividualBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993CA731FC37BC3009E3E2F /* IndividualBill.swift */; };
+		A993CA761FC37D2C009E3E2F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993CA751FC37D2C009E3E2F /* Item.swift */; };
+		A993CA7A1FC38AAF009E3E2F /* GroupBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993CA791FC38AAF009E3E2F /* GroupBillViewController.swift */; };
+		E51CE3871FDB2A01003DE21A /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51CE3861FDB2A01003DE21A /* CategoryRow.swift */; };
+		E51CE3891FDB35C3003DE21A /* ModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51CE3881FDB35C3003DE21A /* ModelClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A93F261A1FDC562C00A142ED /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		A95BDA961FB3BA5500D1555A /* Just Split It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Split It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95BDA991FB3BA5500D1555A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A95BDA9B1FB3BA5500D1555A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,12 @@
 		A95BDAB51FB3BA5600D1555A /* Just Split ItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just Split ItUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95BDAB91FB3BA5600D1555A /* Just_Split_ItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_Split_ItUITests.swift; sourceTree = "<group>"; };
 		A95BDABB1FB3BA5600D1555A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A993CA711FC37AD2009E3E2F /* GroupBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBill.swift; sourceTree = "<group>"; };
+		A993CA731FC37BC3009E3E2F /* IndividualBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualBill.swift; sourceTree = "<group>"; };
+		A993CA751FC37D2C009E3E2F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A993CA791FC38AAF009E3E2F /* GroupBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBillViewController.swift; sourceTree = "<group>"; };
+		E51CE3861FDB2A01003DE21A /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		E51CE3881FDB35C3003DE21A /* ModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +113,14 @@
 			children = (
 				A95BDA991FB3BA5500D1555A /* AppDelegate.swift */,
 				A95BDA9B1FB3BA5500D1555A /* ViewController.swift */,
+				E51CE3881FDB35C3003DE21A /* ModelClass.swift */,
 				A95BDA9D1FB3BA5500D1555A /* Main.storyboard */,
+				A993CA791FC38AAF009E3E2F /* GroupBillViewController.swift */,
+				E51CE3861FDB2A01003DE21A /* CategoryRow.swift */,
+				A993CA711FC37AD2009E3E2F /* GroupBill.swift */,
+				A993CA751FC37D2C009E3E2F /* Item.swift */,
+				A93F261A1FDC562C00A142ED /* Friend.swift */,
+				A993CA731FC37BC3009E3E2F /* IndividualBill.swift */,
 				A95BDAA01FB3BA5500D1555A /* Assets.xcassets */,
 				A95BDAA21FB3BA5500D1555A /* LaunchScreen.storyboard */,
 				A95BDAA51FB3BA5500D1555A /* Info.plist */,
@@ -258,8 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A993CA761FC37D2C009E3E2F /* Item.swift in Sources */,
 				A95BDA9C1FB3BA5500D1555A /* ViewController.swift in Sources */,
+				E51CE3891FDB35C3003DE21A /* ModelClass.swift in Sources */,
+				A993CA721FC37AD2009E3E2F /* GroupBill.swift in Sources */,
 				A95BDA9A1FB3BA5500D1555A /* AppDelegate.swift in Sources */,
+				E51CE3871FDB2A01003DE21A /* CategoryRow.swift in Sources */,
+				A93F261B1FDC562C00A142ED /* Friend.swift in Sources */,
+				A993CA741FC37BC3009E3E2F /* IndividualBill.swift in Sources */,
+				A993CA7A1FC38AAF009E3E2F /* GroupBillViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,10 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YQL6SPGAK5;
+				DEVELOPMENT_TEAM = 76HA5S3YN4;
 				INFOPLIST_FILE = "Just Split It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "just-split-it.Just-Split-It";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.split-it.nyu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -441,10 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YQL6SPGAK5;
+				DEVELOPMENT_TEAM = 76HA5S3YN4;
 				INFOPLIST_FILE = "Just Split It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "just-split-it.Just-Split-It";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.split-it.nyu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
