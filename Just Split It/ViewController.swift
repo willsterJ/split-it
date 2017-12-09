@@ -98,6 +98,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromViewtoGroupBillVC" {
+            
+            let GroupBillViewController = segue.destination
+                as! GroupBillViewController
+            
+            let myIndexPath = self.groupBillsTableView.indexPathForSelectedRow!
+            let row = myIndexPath.row
+            GroupBillViewController.groupBill =  model.groupBillsArray[row]
+        }
+    }
+    
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //
