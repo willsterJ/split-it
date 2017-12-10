@@ -9,24 +9,20 @@ import UIKit
 
 class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    let GBVC:GroupBillViewController = GroupBillViewController()
-    
-    //let model:ModelClass = ModelClass()
-    
-    var friendArray = [Friend]()
-    
+    var friendArray = [Friend]() // holds the friend array from Bill in GroupBillVC
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        print ("count: " + friendArray.count.description)
-        print("Hello")
-        return 10
+        // test
+        print ("category friend count: " + friendArray.count.description)
+        print(friendArray[0].name)
+        return friendArray.count
     }
     
     // extension: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath)
+        
+        
         return friendCellCollection
     }
     
