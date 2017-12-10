@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="-157"/>
+            <point key="canvasLocation" x="20" y="-159"/>
         </scene>
         <!--Capture View Controller-->
         <scene sceneID="FTD-H2-c5C">
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy8-n0-src" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="-815.44227886056979"/>
+            <point key="canvasLocation" x="937" y="-838"/>
         </scene>
         <!--Group Bill View Controller-->
         <scene sceneID="wKj-vN-Mwf">
@@ -205,6 +205,9 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
                                                             <color key="backgroundColor" red="0.69982367316717609" green="1" blue="0.74289240632187348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <connections>
+                                                                <segue destination="pU3-7c-1QY" kind="show" id="uzF-rA-XPn"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -258,7 +261,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnT-b2-2Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="-160.56971514242881"/>
+            <point key="canvasLocation" x="937" y="-158"/>
+        </scene>
+        <!--Individual Bill View Controller-->
+        <scene sceneID="dKB-Pe-1dv">
+            <objects>
+                <viewController id="pU3-7c-1QY" customClass="IndividualBillViewController" customModule="Just_Split_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aix-b7-8xT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SU0-MR-sh3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="svt-eF-ro5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="-160"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="aDJ-eg-ngC">
@@ -276,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKX-HL-GaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="-159"/>
+            <point key="canvasLocation" x="-754" y="-159"/>
         </scene>
     </scenes>
 </document>
