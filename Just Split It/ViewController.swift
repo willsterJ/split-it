@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // EXAMPLE
         let groupBill1 = GroupBill(name: "Bill 1")
         let groupBill2 = GroupBill(name: "Bill 2")
         let groupBill3 = GroupBill(name: "Bill 3")

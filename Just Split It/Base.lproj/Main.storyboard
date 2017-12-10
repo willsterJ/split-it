@@ -206,7 +206,7 @@
                                                             </view>
                                                             <color key="backgroundColor" red="0.69982367316717609" green="1" blue="0.74289240632187348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
-                                                                <segue destination="pU3-7c-1QY" kind="show" id="uzF-rA-XPn"/>
+                                                                <segue destination="pU3-7c-1QY" kind="show" identifier="GroupBillVCtoIndividualBillVC" id="uzF-rA-XPn"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

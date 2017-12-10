@@ -47,4 +47,8 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
         let itemHeight = collectionView.bounds.height - (2*hardCodedPadding)
         return CGSize(width: itemWidth, height: itemHeight)
     }
+    
+    
+    
+    
 }
