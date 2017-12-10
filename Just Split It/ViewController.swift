@@ -19,9 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let groupBill1 = GroupBill(name: "Bill 1")
         let groupBill2 = GroupBill(name: "Bill 2")
         let groupBill3 = GroupBill(name: "Bill 3")
-        let item1 = Item(name: "milk", price: 2)
+        let item1 = Item(name: "milkshake capuccino espresso gonzalalaalalala", price: 2)
         let item2 = Item(name: "coke", price: 3)
         let item3 = Item(name: "sprite", price: 4)
+        let item4 = Item(name: "hard drugs", price: 5)
         let friend1 = Friend()
         friend1.name = "William"
         let friend2 = Friend()
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         groupBill1.addItem(item: item1)
         groupBill1.addItem(item: item2)
         groupBill1.addItem(item: item3)
+        groupBill1.addItem(item: item4)
         groupBill1.addFriend(friend: friend1)
         groupBill1.addFriend(friend: friend2)
         

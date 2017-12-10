@@ -13,76 +13,96 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var FriendTableView: UITableView!
     @IBOutlet weak var ItemTableView: UITableView!
+    @IBOutlet weak var priceTableView: UITableView!
     
     var model:ModelClass = ModelClass()
     
-    var groupBill = GroupBill()
+    var groupBill = GroupBill() // this is the user-selected group bill is carried over from ViewController
     
     var itemsArray:[Item] = [Item]()
-    var friendsArray:[String] = [String]()
+    var friendsArray:[Friend] = [Friend]()
     
     var categories = ["Friends"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        ItemTableView.delegate = self
-        ItemTableView.dataSource = self
         
-        FriendTableView.delegate = self
-        FriendTableView.dataSource = self
+        print(groupBill.getBillName())  // for testing
         
-        print(groupBill.getBillName())
+        print(groupBill.getItemArray().count)
+        
+        itemsArray = groupBill.getItemArray()
+        
+        print(itemsArray.count)
     
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // if tableView is the top table view (i.e. friend's list)
         if (tableView == self.FriendTableView){
-            return categories[section]
+            return categories[section]  // only 1 category here
         }
-        else{
+        // if tableView is the bottom table view (i.e. items list)
+        else if (tableView == self.ItemTableView){
             return groupBill.getBillName()
+        }
+        
+        else{
+            return "Price"
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         if(tableView == self.ItemTableView) {
-             return 1
+            return 1
         }
-        else {
-            return categories.count;
+        else if (tableView == self.FriendTableView){
+            return 1
         }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-         if(tableView == self.ItemTableView) {
-             return self.itemsArray.count
-            
-         }
-         else {
+        else{
             return 1
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // # of rows dependent on array size
+         if(tableView == self.ItemTableView) {
+             return self.itemsArray.count
+         }
+         else if (tableView == self.FriendTableView){
+            return 1
+        }
+         else{
+            return self.itemsArray.count
+        }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(tableView == self.ItemTableView){
+            return 40
+        }
+        else if (tableView == self.FriendTableView){
+            return 90
+        }
+        else{
+            return 40
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == self.ItemTableView) {
-            let itemCell:UITableViewCell = self.ItemTableView.dequeueReusableCell(withIdentifier:"itemCell")!
-            //get It
-            itemCell.textLabel?.text = self.itemsArray[indexPath.row].name
-            
+            let itemCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
+            itemCell.textLabel?.text = itemsArray[indexPath.row].name
             return itemCell
             
-        } else {
+        } else if (tableView == self.FriendTableView){
             let friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! CategoryRow
             return friendCell
+        }
+        else{
+            let priceCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "priceCell")
+            priceCell.textLabel?.text = itemsArray[indexPath.row].price.description
+            return priceCell
         }
     }
     
