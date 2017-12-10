@@ -45,8 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         model.addBill(groupBill: groupBill2)
         model.addBill(groupBill: groupBill3)
         
-        print(groupBill1.getBillName())
-        print(model.getCount())
         
     }
     
@@ -56,7 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(model.groupBillArray.count)
         return model.groupBillArray.count
     }
     

@@ -7,17 +7,19 @@
 
 import UIKit
 
-class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GroupBillVCDelegate {
+class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var s:String = String()
+//    let GBVC:GroupBillViewController = GroupBillViewController()
     
-    func passFriendArray(string: String) {
-        s = string
-        print(string)
-    }
+    //let model:ModelClass = ModelClass()
+    
+    var friendArray = [Friend]()
+    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        passFriendArray(string: s)
+
+        print ("count: " + friendArray.count.description)
         print("Hello")
         return 10
     }
