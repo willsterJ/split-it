@@ -8,16 +8,12 @@
 import UIKit
 
 class Friend: NSObject {
+    var name:String
     
-    //Properties
     
-    //Friend name
-    var name: String
-    
-    //Initialization
-    public init?(name: String) {
-        // Initialize stored properties.
-        self.name = name
+    override init(){
+        name = ""
+        
     }
 
 }

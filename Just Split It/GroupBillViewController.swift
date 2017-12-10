@@ -14,7 +14,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var FriendTableView: UITableView!
     @IBOutlet weak var ItemTableView: UITableView!
     
-    var model = ModelClass()
+    var model:ModelClass = ModelClass()
     
     var groupBill = GroupBill()
     
@@ -35,11 +35,6 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         
         print(groupBill.getBillName())
     
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -101,6 +96,18 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }
 

@@ -9,43 +9,38 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //var groupBillsArray: NSMutableArray
-    //var groupBillsArray:[GroupBill] = [GroupBill]()
-    
-    let model = ModelClass ()
-    
-    
-    
     @IBOutlet weak var groupBillsTableView: UITableView!
+    
+    // initialize model (for MVC purposes)
+    var model: ModelClass = ModelClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let groupBill1 = GroupBill(name: "Bill 1")
+        let groupBill2 = GroupBill(name: "Bill 2")
+        let groupBill3 = GroupBill(name: "Bill 3")
+        let item1 = Item(name: "milk", price: 2)
+        let item2 = Item(name: "coke", price: 3)
+        let item3 = Item(name: "sprite", price: 4)
+        let friend1 = Friend()
+        friend1.name = "William"
+        let friend2 = Friend()
+        friend2.name = "Josh"
+        groupBill1.addItem(item: item1)
+        groupBill1.addItem(item: item2)
+        groupBill1.addItem(item: item3)
+        groupBill1.addFriend(friend: friend1)
+        groupBill1.addFriend(friend: friend2)
         
-        self.groupBillsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //let model:ModelClass = ModelClass()
+        //model = ModelClass()
+        model.addBill(groupBill: groupBill1)
+        model.addBill(groupBill: groupBill2)
+        model.addBill(groupBill: groupBill3)
         
-        groupBillsTableView.delegate = self
-        groupBillsTableView.dataSource = self
+        print(groupBill1.getBillName())
+        print(model.getCount())
         
-        //groupBillsTableView = UITableView()
-       // groupBillsArray = [GroupBill]()
-       
-
-        //example
-        var groupBill1 = GroupBill(name: "Bill 1")
-        let Josh = Friend(name: "Josh")
-        let item1 = Item(name: "Apple", price: 2, friend: Josh!)
-        groupBill1.addItem(item: item1!)
-        //groupBillsArray.append(groupBill1)
-        model.groupBillsArray.append(groupBill1)
-    
- 
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,9 +48,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.model.groupBillsArray.count;
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(model.groupBillArray.count)
+        return model.groupBillArray.count
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,68 +58,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "billCell") as! UITableViewCell
-        
-        // Configure the cell...
-        
-        return cell
-         */
-
-        let billCell:UITableViewCell = self.groupBillsTableView.dequeueReusableCell(withIdentifier:"billCell")!
-        //get It
-        billCell.textLabel?.text = self.model.groupBillsArray[indexPath.row].getBillName()
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let billCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "billCell")
+        billCell.textLabel?.text = model.groupBillArray[indexPath.row].getBillName()
         return billCell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var groupBillVC = GroupBillViewController()
-        //groupBillVC = segue.destination as! GroupBillViewController
-        
+        let groupBillVC = GroupBillViewController()
         groupBillVC.model = self.model;
+        groupBillVC.groupBill = self.model.groupBillArray[indexPath.row]
         
-        
-        
-        groupBillVC.groupBill = self.model.groupBillsArray[indexPath.row]
-        
-        //groupBillVC.index = indexPath.row
-        
+        self.performSegue(withIdentifier: "VCtoGroupBillVC", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromViewtoGroupBillVC" {
+        if segue.identifier == "VCtoGroupBillVC" {
             
-            let GroupBillViewController = segue.destination
+            let GroupBillVC = segue.destination
                 as! GroupBillViewController
-            
             let myIndexPath = self.groupBillsTableView.indexPathForSelectedRow!
             let row = myIndexPath.row
-            GroupBillViewController.groupBill =  model.groupBillsArray[row]
+            GroupBillVC.groupBill =  model.groupBillArray[row]
         }
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if (segue.identifier == "fromViewtoGroupBillVC"){
-//            var groupBillVC = GroupBillViewController()
-//            groupBillVC = segue.destination as! GroupBillViewController
-//
-//            groupBillVC.model = self.model;
-//
-//            groupBillVC.index = IndexPath.row
-//
-//            //groupBillVC.groupBill = self.model.groupBillsArray [self.groupBillsTableView.indexPathForSelectedRow].row
-//        }
-//    }
 
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }
 

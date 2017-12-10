@@ -9,7 +9,18 @@ import UIKit
 
 class ModelClass: NSObject {
 
-    var groupBillsArray: [GroupBill] = [GroupBill] ()
+    // array of Group Bills
+    var groupBillArray: [GroupBill]
     
-
+    override init(){
+        groupBillArray = [GroupBill]()
+    }
+    
+    func addBill(groupBill: GroupBill){
+        groupBillArray.append(groupBill)
+    }
+    
+    func getCount() -> Int{
+        return groupBillArray.count
+    }
 }

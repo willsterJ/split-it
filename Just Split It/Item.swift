@@ -7,28 +7,19 @@
 
 import Foundation
 
-public class Item {
+public class Item:NSObject {
     //Properties
-    
-    //Food/drink item name
     var name: String
-    //price
-    var price: Int
-    //friend who bought it
-    var friend: Friend //could make its own Friend class
+    var price: Float
     
-
-    //Initialization
-    init?(name: String, price: Int, friend: Friend) {
-        // Initialization should fail if there is no name or if the rating is negative.
-        if name.isEmpty || price < 0  {
-            return nil
-        }
-        
-        // Initialize stored properties.
-        self.name = name
-        self.price = price
-        self.friend = friend
+    // initializers
+    override init(){
+        self.name = ""
+        self.price = 0;
+    }
+    init (name: String, price: Float){
+        self.name = name;
+        self.price = price;
     }
 }
 
