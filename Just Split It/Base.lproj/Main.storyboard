@@ -10,30 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Capture View Controller-->
-        <scene sceneID="efH-Yj-NZu">
-            <objects>
-                <viewController storyboardIdentifier="CaptureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="85k-ZL-eVz" customClass="CaptureViewController" customModule="Just_Split_It" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cbR-pP-P2u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXV-tg-LNy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="0AV-pd-lQm"/>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="NXV-tg-LNy" id="0C8-0g-Cts"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2bK-0B-uwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1157.5999999999999" y="-823.53823088455783"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -128,7 +104,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ifx-nV-Suu">
-                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="New Bill" style="plain" id="ybW-cT-6Fa">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ct6-no-4bz">
                                 <rect key="frame" x="16" y="7" width="55" height="30"/>
@@ -136,14 +111,6 @@
                                 <state key="normal" title="New Bill"/>
                             </button>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Qb-vd-yfj">
-                            <rect key="frame" x="164.5" y="7" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <segue destination="85k-ZL-eVz" kind="show" id="rC4-Xe-GKT"/>
-                            </connections>
-                        </button>
                     </navigationItem>
                     <connections>
                         <outlet property="groupBillsTableView" destination="SMh-rw-53E" id="utF-Ek-dWm"/>
@@ -229,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnT-b2-2Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="-158"/>
+            <point key="canvasLocation" x="753" y="-160"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="aDJ-eg-ngC">
@@ -247,7 +214,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKX-HL-GaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489" y="-156"/>
+            <point key="canvasLocation" x="-748" y="-159"/>
         </scene>
     </scenes>
 </document>

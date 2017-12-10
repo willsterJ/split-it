@@ -20,7 +20,6 @@
 		A993CA7A1FC38AAF009E3E2F /* GroupBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993CA791FC38AAF009E3E2F /* GroupBillViewController.swift */; };
 		E51CE3871FDB2A01003DE21A /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51CE3861FDB2A01003DE21A /* CategoryRow.swift */; };
 		E51CE3891FDB35C3003DE21A /* ModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51CE3881FDB35C3003DE21A /* ModelClass.swift */; };
-		FDDA19281FDCF5E0004C5401 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA19271FDCF5E0004C5401 /* CaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		A993CA791FC38AAF009E3E2F /* GroupBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBillViewController.swift; sourceTree = "<group>"; };
 		E51CE3861FDB2A01003DE21A /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		E51CE3881FDB35C3003DE21A /* ModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelClass.swift; sourceTree = "<group>"; };
-		FDDA19271FDCF5E0004C5401 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +284,6 @@
 				E51CE3871FDB2A01003DE21A /* CategoryRow.swift in Sources */,
 				A93F261B1FDC562C00A142ED /* Friend.swift in Sources */,
 				A993CA7A1FC38AAF009E3E2F /* GroupBillViewController.swift in Sources */,
-				FDDA19281FDCF5E0004C5401 /* CaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
