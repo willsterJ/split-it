@@ -121,16 +121,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ifx-nV-Suu">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="New Bill" style="plain" id="ybW-cT-6Fa">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ct6-no-4bz">
                                 <rect key="frame" x="16" y="7" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Bill"/>
                             </button>
-                            <connections>
-                                <segue destination="85k-ZL-eVz" kind="show" identifier="fromViewToCapture" id="7ab-Ux-dOK"/>
-                            </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Qb-vd-yfj">
+                            <rect key="frame" x="164.5" y="7" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <segue destination="85k-ZL-eVz" kind="show" id="rC4-Xe-GKT"/>
+                            </connections>
+                        </button>
                     </navigationItem>
                     <connections>
                         <outlet property="groupBillsTableView" destination="SMh-rw-53E" id="utF-Ek-dWm"/>
