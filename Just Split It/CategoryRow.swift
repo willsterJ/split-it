@@ -7,38 +7,28 @@
 
 import UIKit
 
-class CategoryRow: UITableViewCell {
-    var friendsArray:[Friend] = [Friend]()
+class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GroupBillVCDelegate {
     
-    init(friendList: [Friend]){
-        super.init(style: UITableViewCellStyle.default,
-        reuseIdentifier: "friendCellCollection")
-        
-        self.friendsArray = friendList
-    }
+    var s:String = String()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func passFriendArray(string: String) {
+        s = string
+        print(string)
     }
-}
-
-extension CategoryRow: UICollectionViewDataSource {
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.friendsArray.count)
+        passFriendArray(string: s)
+        print("Hello")
         return 10
     }
     
+    // extension: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath) as! UICollectionViewCell
+        let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath)
         return friendCellCollection
     }
     
-    
-}
-
-extension CategoryRow: UICollectionViewDelegateFlowLayout{
+    // extension: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 4
         let hardCodedPadding: CGFloat = 5

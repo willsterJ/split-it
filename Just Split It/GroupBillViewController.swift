@@ -7,9 +7,15 @@
 
 import UIKit
 
+// used to pass a friend array to CategoryRow so that it has reference to the array
+protocol GroupBillVCDelegate{
+    func passFriendArray(string: String)
+}
+
 
 class GroupBillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    var delegate:GroupBillVCDelegate? // for delegate passing message
     
     @IBOutlet weak var FriendTableView: UITableView!
     @IBOutlet weak var ItemTableView: UITableView!
@@ -95,10 +101,10 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
             return itemCell
             
         } else if (tableView == self.FriendTableView){
-            let friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! CategoryRow
+            let friendListCell = tableView.dequeueReusableCell(withIdentifier: "friendListCell") as! CategoryRow
             // transfer friends array to CategoryRow
-            let catRow = CategoryRow(friendList: self.friendsArray)
-            return friendCell
+            self.delegate?.passFriendArray(string: "Hello There")
+            return friendListCell
         }
         else{
             let priceCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "priceCell")
