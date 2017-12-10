@@ -8,12 +8,26 @@
 import UIKit
 
 class CategoryRow: UITableViewCell {
+    var friendsArray:[Friend] = [Friend]()
     
+    init(friendList: [Friend]){
+        super.init(style: UITableViewCellStyle.default,
+        reuseIdentifier: "friendCellCollection")
+        
+        self.friendsArray = friendList
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 
 extension CategoryRow: UICollectionViewDataSource {
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        print(self.friendsArray.count)
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

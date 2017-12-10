@@ -21,9 +21,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var itemsArray:[Item] = [Item]()
     var friendsArray:[Friend] = [Friend]()
-    
-    var categories = ["Friends"]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +30,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         print(groupBill.getItemArray().count)
         
         itemsArray = groupBill.getItemArray()
+        friendsArray = groupBill.getFriendArray()
         
         print(itemsArray.count)
     
@@ -40,7 +39,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // if tableView is the top table view (i.e. friend's list)
         if (tableView == self.FriendTableView){
-            return categories[section]  // only 1 category here
+            return "Friends" // only 1 category here
         }
         // if tableView is the bottom table view (i.e. items list)
         else if (tableView == self.ItemTableView){
@@ -97,6 +96,8 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
             
         } else if (tableView == self.FriendTableView){
             let friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! CategoryRow
+            // transfer friends array to CategoryRow
+            let catRow = CategoryRow(friendList: self.friendsArray)
             return friendCell
         }
         else{

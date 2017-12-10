@@ -4,6 +4,8 @@
 //
 //  Created by Maria-Belem on 11/8/17.
 //
+//  GITHUB LINK: https://github.com/Split-it-app/split-it
+//
 
 import UIKit
 
@@ -20,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let groupBill2 = GroupBill(name: "Bill 2")
         let groupBill3 = GroupBill(name: "Bill 3")
         let item1 = Item(name: "milkshake capuccino espresso gonzalalaalalala", price: 2)
-        let item2 = Item(name: "coke", price: 3)
+        let item2 = Item(name: "coca cola", price: 3)
         let item3 = Item(name: "sprite", price: 4)
         let item4 = Item(name: "hard drugs", price: 5)
         let friend1 = Friend()
