@@ -128,7 +128,7 @@
                                 <state key="normal" title="New Bill"/>
                             </button>
                             <connections>
-                                <segue destination="85k-ZL-eVz" kind="show" id="6gy-mu-FGf"/>
+                                <segue destination="85k-ZL-eVz" kind="show" identifier="fromViewToCapture" id="7ab-Ux-dOK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
