@@ -126,7 +126,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
             
         }
     }
-    */
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
