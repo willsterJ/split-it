@@ -16,6 +16,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var ItemTableView: UITableView!
     @IBOutlet weak var priceTableView: UITableView!
     
+    
     var model:ModelClass = ModelClass()
     
     var groupBill = GroupBill() // this is the user-selected group bill is carried over from ViewController
@@ -106,7 +107,6 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         
         /* else if (tableView == self.FriendTableView){
             let friendListCell = tableView.dequeueReusableCell(withIdentifier: "friendListCell") as! CategoryRow
-            friendListCell.textLabel?.text = "friend"
             // transfer friends array to CategoryRow
             friendListCell.friendArray = self.friendsArray
             return friendListCell
@@ -119,13 +119,12 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // transfer individual bill to IndividualBillVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "GroupBillVCtoIndividualBillVC"){
+            
+        }
     }
     */
     

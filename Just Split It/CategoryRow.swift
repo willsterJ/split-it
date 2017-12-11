@@ -16,10 +16,10 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
     var friendArray = [Friend]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        print ("count: " + friendArray.count.description)
-        print("Hello")
-        return 10
+        // test
+        print ("category friend count: " + friendArray.count.description)
+        print(friendArray[0].name)
+        return friendArray.count
     }
     
     // extension: UICollectionViewDataSource
@@ -41,4 +41,8 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
         let itemHeight = collectionView.bounds.height - (2*hardCodedPadding)
         return CGSize(width: itemWidth, height: itemHeight)
     }
+    
+    
+    
+    
 }
