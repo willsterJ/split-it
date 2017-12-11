@@ -93,9 +93,18 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         if(tableView == self.ItemTableView) {
             let itemCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
             itemCell.textLabel?.text = itemsArray[indexPath.row].name
+            itemCell.detailTextLabel?.text = itemsArray[indexPath.row].price.description
             return itemCell
-            
-        } else if (tableView == self.FriendTableView){
+        
+        } else {
+            let friendListCell = tableView.dequeueReusableCell(withIdentifier: "friendListCell") as! CategoryRow
+            //friendListCell.textLabel?.text = "friend" //REMOVED because need to write friend name in collection view cell and NOT table view cell 
+            // transfer friends array to CategoryRow
+            friendListCell.friendArray = self.friendsArray
+            return friendListCell
+        }
+        
+        /* else if (tableView == self.FriendTableView){
             let friendListCell = tableView.dequeueReusableCell(withIdentifier: "friendListCell") as! CategoryRow
             friendListCell.textLabel?.text = "friend"
             // transfer friends array to CategoryRow
@@ -106,7 +115,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
             let priceCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "priceCell")
             priceCell.textLabel?.text = itemsArray[indexPath.row].price.description
             return priceCell
-        }
+        }*/
     }
     
 
@@ -119,13 +128,6 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    
-    
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

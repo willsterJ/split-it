@@ -15,8 +15,6 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
     
     var friendArray = [Friend]()
     
-
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         print ("count: " + friendArray.count.description)
@@ -26,7 +24,12 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
     
     // extension: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath)
+        let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath) as! friendCollectionViewCell
+        
+         friendCellCollection.friendName = "Friend"
+        //let friend = friendArray[indexPath.row];
+       // friendCellCollection.friendName = friend.name
+        
         return friendCellCollection
     }
     
