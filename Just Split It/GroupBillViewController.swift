@@ -92,7 +92,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == self.ItemTableView) {
-            let itemCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
+            let itemCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "itemCell")
             itemCell.textLabel?.text = itemsArray[indexPath.row].name
             itemCell.detailTextLabel?.text = itemsArray[indexPath.row].price.description
             return itemCell
