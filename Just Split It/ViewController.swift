@@ -33,6 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         friend2.name = "MJ"
         let friend3 = Friend()
         friend3.name = "WJ"
+        let friend4 = Friend()
+        friend4.name = "Hull"
         groupBill1.addItem(item: item1)
         groupBill1.addItem(item: item2)
         groupBill1.addItem(item: item3)
@@ -40,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         groupBill1.addFriend(friend: friend1)
         groupBill1.addFriend(friend: friend2)
         groupBill1.addFriend(friend: friend3)
+        groupBill1.addFriend(friend: friend4)
         
         //let model:ModelClass = ModelClass()
         //model = ModelClass()
