@@ -26,7 +26,7 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let friendCellCollection = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCellCollection", for: indexPath) as! friendCollectionViewCell
         
-         friendCellCollection.friendName = "Friend"
+         friendCellCollection.friendName = friendArray[indexPath.row].name
         //let friend = friendArray[indexPath.row];
        // friendCellCollection.friendName = friend.name
         
