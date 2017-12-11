@@ -44,6 +44,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         groupBill1.addFriend(friend: friend3)
         groupBill1.addFriend(friend: friend4)
         
+        let John = Friend()
+        John.name = "John"
+        let Peter = Friend()
+        Peter.name = "Peter"
+        groupBill2.addFriend(friend: John)
+        groupBill2.addFriend(friend: Peter)
+        let Emily = Friend()
+        Emily.name = "Emily"
+        let Jessica = Friend()
+        Jessica.name = "Jessica"
+        groupBill3.addFriend(friend: Emily)
+        groupBill3.addFriend(friend: Jessica)
+        
         //let model:ModelClass = ModelClass()
         //model = ModelClass()
         model.addBill(groupBill: groupBill1)

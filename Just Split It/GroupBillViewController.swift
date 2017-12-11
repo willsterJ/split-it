@@ -23,6 +23,7 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var itemsArray:[Item] = [Item]()
     var friendsArray:[Friend] = [Friend]()
+    var totalPrice = 100.0
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,19 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         else{
             return "Price"
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+       var showPrice = ""
+        if (tableView == self.ItemTableView){
+        /*
+            for i in itemsArray {
+                totalPrice += itemsArray[i].price
+            }
+        */
+            showPrice = "Total $ \(totalPrice)"
+        }
+        return showPrice
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -120,6 +134,28 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         }*/
     }
     
+    /*
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        //self.myTableView.tableFooterView = footerView;
+        
+        /*
+        for item in itemsArray {
+            totalPrice += itemsArray[item].price
+        }
+ */
+
+        let label = UILabel(frame: CGRect(x: footerView.frame.origin.x - 15, y: footerView.frame.origin.y, width: footerView.frame.size.width, height: 20))
+        label.textAlignment = NSTextAlignment.right
+        
+        label.text = "Total $ \(totalPrice)"
+        
+        footerView.addSubview(label)
+        
+        return footerView
+    }
+    */
 
     
     // transfer individual bill to IndividualBillVC
