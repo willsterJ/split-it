@@ -18,7 +18,7 @@ class CategoryRow: UITableViewCell, UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // test
         print ("category friend count: " + friendArray.count.description)
-        print(friendArray[0].name)
+        //print(friendArray[0].name)
         return friendArray.count
     }
     

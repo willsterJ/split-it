@@ -108,9 +108,14 @@ class GroupBillViewController: UIViewController, UITableViewDelegate, UITableVie
         if(tableView == self.ItemTableView) {
             //let itemCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
             
-            let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-            itemCell.textLabel?.text = itemsArray[indexPath.row].name
-            itemCell.detailTextLabel?.text = "$" + itemsArray[indexPath.row].price.description
+            let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! itemListTableViewCell
+            
+            
+            itemCell.Title.text = itemsArray[indexPath.row].name
+            itemCell.Detail.text = "$" + itemsArray[indexPath.row].price.description
+            
+            //itemCell.textLabel?.text = itemsArray[indexPath.row].name
+            //itemCell.detailTextLabel?.text = "$" + itemsArray[indexPath.row].price.description
             return itemCell
         
         } else {
