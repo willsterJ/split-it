@@ -142,6 +142,7 @@
                                 <state key="normal" title="Capture"/>
                                 <connections>
                                     <action selector="onTapTakePhoto:" destination="Yo2-6n-WQF" eventType="touchUpInside" id="cas-3l-aWX"/>
+                                    <segue destination="CBH-O1-37N" kind="show" identifier="showPictureSegue" id="ixv-E4-rhw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,6 +167,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy8-n0-src" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="-838.83058470764627"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="o8E-Lq-alg">
+            <objects>
+                <viewController id="CBH-O1-37N" customClass="PictureViewController" customModule="Just_Split_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BgR-Br-uSM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-oJ-G5N">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hfr-PM-oBF" firstAttribute="bottom" secondItem="YR8-oJ-G5N" secondAttribute="bottom" id="3Oy-Qo-Tic"/>
+                            <constraint firstItem="hfr-PM-oBF" firstAttribute="trailing" secondItem="YR8-oJ-G5N" secondAttribute="trailing" id="JQV-5y-Kax"/>
+                            <constraint firstItem="YR8-oJ-G5N" firstAttribute="top" secondItem="hfr-PM-oBF" secondAttribute="top" id="mCm-tY-O60"/>
+                            <constraint firstItem="YR8-oJ-G5N" firstAttribute="leading" secondItem="hfr-PM-oBF" secondAttribute="leading" id="nD9-0e-IdI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hfr-PM-oBF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jzc-03-qg4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0Sp-29-k7W">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hrM-bV-DX3">
+                                <rect key="frame" x="302" y="5.5" width="57" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Digitize"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCV-6a-Wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.8" y="-839.73013493253382"/>
         </scene>
         <!--Group Bill View Controller-->
         <scene sceneID="wKj-vN-Mwf">

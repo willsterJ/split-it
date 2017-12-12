@@ -24,6 +24,7 @@
 		E57FE13F1FDEE1460015F391 /* itemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FE13E1FDEE1460015F391 /* itemListTableViewCell.swift */; };
 		FD2837B51FDD0F7E00DD1F83 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2837B11FDD0F7D00DD1F83 /* CaptureViewController.swift */; };
 		FD2837B81FDD0F7E00DD1F83 /* GroupBillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2837B41FDD0F7E00DD1F83 /* GroupBillsTableViewController.swift */; };
+		FD4128651FDFB7BA00AAED05 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4128641FDFB7BA00AAED05 /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E5D163161FDDF7230004A947 /* IndividualBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualBillViewController.swift; sourceTree = "<group>"; };
 		FD2837B11FDD0F7D00DD1F83 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		FD2837B41FDD0F7E00DD1F83 /* GroupBillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBillsTableViewController.swift; sourceTree = "<group>"; };
+		FD4128641FDFB7BA00AAED05 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				A95BDA991FB3BA5500D1555A /* AppDelegate.swift */,
 				A95BDAA21FB3BA5500D1555A /* LaunchScreen.storyboard */,
 				A95BDAA51FB3BA5500D1555A /* Info.plist */,
+				FD4128641FDFB7BA00AAED05 /* PictureViewController.swift */,
 			);
 			path = "Just Split It";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				A95BDA9A1FB3BA5500D1555A /* AppDelegate.swift in Sources */,
 				A9607B991FDE047800ABDBEC /* friendCollectionViewCell.swift in Sources */,
 				E57FE13F1FDEE1460015F391 /* itemListTableViewCell.swift in Sources */,
+				FD4128651FDFB7BA00AAED05 /* PictureViewController.swift in Sources */,
 				E51CE3871FDB2A01003DE21A /* CategoryRow.swift in Sources */,
 				A93F261B1FDC562C00A142ED /* Friend.swift in Sources */,
 				A993CA7A1FC38AAF009E3E2F /* GroupBillViewController.swift in Sources */,
