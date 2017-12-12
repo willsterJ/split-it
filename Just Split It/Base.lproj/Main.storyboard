@@ -142,7 +142,6 @@
                                 <state key="normal" title="Capture"/>
                                 <connections>
                                     <action selector="onTapTakePhoto:" destination="Yo2-6n-WQF" eventType="touchUpInside" id="cas-3l-aWX"/>
-                                    <segue destination="CBH-O1-37N" kind="show" identifier="showPictureSegue" id="ixv-E4-rhw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,11 +161,12 @@
                     <connections>
                         <outlet property="captureButton" destination="Q6e-UL-if0" id="gfU-0U-iuk"/>
                         <outlet property="previewView" destination="rV0-ED-Gcs" id="hMg-J1-el9"/>
+                        <segue destination="CBH-O1-37N" kind="show" identifier="showPictureSegue" id="Xk7-TP-Byg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy8-n0-src" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="-838.83058470764627"/>
+            <point key="canvasLocation" x="937" y="-840"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="o8E-Lq-alg">
@@ -199,6 +199,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="YR8-oJ-G5N" id="79S-aR-rWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCV-6a-Wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

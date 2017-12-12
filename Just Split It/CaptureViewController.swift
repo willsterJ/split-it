@@ -20,6 +20,8 @@ class CaptureViewController: UIViewController {
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer?
 	//Allows us to capture a still image from the captureSession
 	var capturePhotoOutput: AVCapturePhotoOutput?
+	//Allows us to send the image to the next view
+	var image: UIImage?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +82,20 @@ class CaptureViewController: UIViewController {
 		//Call capturePhoto method and pass photoSettings and self which implements AVCapturePhotoCaptureDelegate
 		capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showPictureSegue" {
+		
+			let destination = segue.destination as! PictureViewController
+			destination.capturedImageRef = self.image!
+		
+		// returns nil propertyfrom here
+		//destination.navigationController!.setNavigationBarHidden(true, animated: false)
+		}
+	}
 
 }
+
 extension CaptureViewController : AVCapturePhotoCaptureDelegate {
 	func photoOutput(_ captureOutput: AVCapturePhotoOutput,
 					 didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
@@ -101,9 +115,11 @@ extension CaptureViewController : AVCapturePhotoCaptureDelegate {
 		}
 		//Init a UIImage with our image data
 		let capturedImage = UIImage.init(data: imageData , scale: 1.0)
-		if let image = capturedImage {
-			// Save our captured image to photos album
-			UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+		if let img = capturedImage {
+			//Set our captured image to the class var
+			self.image = img
+			
+			self.performSegue(withIdentifier: "showPictureSegue", sender: self)
 		}
 	}
 }

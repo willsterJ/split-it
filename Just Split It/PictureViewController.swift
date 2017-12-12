@@ -8,11 +8,17 @@
 import UIKit
 
 class PictureViewController: UIViewController {
-
+	
+	@IBOutlet weak var imageView: UIImageView!
+	
+	//Variable that's going to receive the UIImage
+	var capturedImageRef = UIImage()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		imageView.image = capturedImageRef
+        
     }
 
     override func didReceiveMemoryWarning() {
