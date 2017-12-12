@@ -18,7 +18,6 @@ class PictureViewController: UIViewController {
         super.viewDidLoad()
 
 		imageView.image = capturedImageRef
-        
     }
 
     override func didReceiveMemoryWarning() {
