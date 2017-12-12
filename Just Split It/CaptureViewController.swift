@@ -11,20 +11,21 @@ import Vision
 
 class CaptureViewController: UIViewController {
 
-	 @IBOutlet weak var previewView: UIView!
+	@IBOutlet weak var previewView: UIView!
+	@IBOutlet weak var captureButton: UIButton!
 	
 	//Allows us to transfer data between one or more device inputs
 	var captureSession: AVCaptureSession?
 	//Allows us to render the live feed from the camera to the view
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+	//Allows us to capture a still image from the captureSession
+	var capturePhotoOutput: AVCapturePhotoOutput?
 	
 	//Array of generic VNRequests
 	//var requests = [VNRequest]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
 		
 		//Init a device object with a video media type
 		let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
@@ -44,6 +45,13 @@ class CaptureViewController: UIViewController {
 			videoPreviewLayer?.frame = view.layer.bounds
 			previewView.layer.addSublayer(videoPreviewLayer!)
 			
+			//Init AVCapturePhotoOutput
+			capturePhotoOutput = AVCapturePhotoOutput()
+			//Enable High Res photos
+			capturePhotoOutput?.isHighResolutionCaptureEnabled = true
+			//Add capturePhotoOutput as output to the capture session
+			captureSession?.addOutput(capturePhotoOutput!)
+			
 			//Start capture session
 			captureSession?.startRunning()
 			
@@ -61,6 +69,24 @@ class CaptureViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		//startLiveVideo()
 		//startTextDetection()
+	}
+	
+	@IBAction func onTapTakePhoto(_ sender: Any) {
+		// Check if capturePhotoOutput is valid
+		guard let capturePhotoOutput = self.capturePhotoOutput else {
+			return
+		}
+		
+		//Init AVCapturePhotoSettings
+		let photoSettings = AVCapturePhotoSettings()
+		
+		//Set photo settings
+		photoSettings.isAutoStillImageStabilizationEnabled = true
+		photoSettings.isHighResolutionPhotoEnabled = true
+		photoSettings.flashMode = .on
+		
+		//Call capturePhoto method and pass photoSettings and self which implements AVCapturePhotoCaptureDelegate
+		capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
 	}
 	
 //	override func viewDidLayoutSubviews() {
@@ -208,10 +234,32 @@ class CaptureViewController: UIViewController {
 //			print(error)
 //		}
 //	}
-	
-	
-}
 
-extension CaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
-	
+}
+extension CaptureViewController : AVCapturePhotoCaptureDelegate {
+	func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+					 didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+					 previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+					 resolvedSettings: AVCaptureResolvedPhotoSettings,
+					 bracketSettings: AVCaptureBracketedStillImageSettings?,
+					 error: Error?) {
+		//Get captured image
+		// Make sure we get some photo sample buffer
+		guard error == nil,
+			let photoSampleBuffer = photoSampleBuffer else {
+				print("Error capturing photo: \(String(describing: error))")
+				return
+		}
+		// Convert photo same buffer to a jpeg image data by using // AVCapturePhotoOutput
+		guard let imageData =
+			AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) else {
+				return
+		}
+		// Initialise a UIImage with our image data
+		let capturedImage = UIImage.init(data: imageData , scale: 1.0)
+		if let image = capturedImage {
+			// Save our captured image to photos album
+			UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+		}
+	}
 }
